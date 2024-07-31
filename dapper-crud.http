@@ -1,0 +1,40 @@
+# Defina a variável de ambiente para o endereço do host
+@dapper_crud_HostAddress = http://localhost:5091
+
+# Testar o endpoint GET /api/produtos
+GET {{dapper_crud_HostAddress}}/api/produtos
+Accept: application/json
+
+###
+
+# Testar o endpoint GET /api/produtos/{id} com um id de exemplo
+GET {{dapper_crud_HostAddress}}/api/produtos/1
+Accept: application/json
+
+###
+
+# Testar o endpoint POST /api/produtos com um payload de exemplo
+POST {{dapper_crud_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "Nome": "Produto Exemplo",
+  "Preco": 19.99
+}
+
+###
+
+# Testar o endpoint PUT /api/produtos/{id} com um id de exemplo e payload de atualização
+PUT {{dapper_crud_HostAddress}}/api/produtos/1
+Content-Type: application/json
+
+{
+  "Nome": "Produto Atualizado",
+  "Preco": 29.99
+}
+
+###
+
+# Testar o endpoint DELETE /api/produtos/{id} com um id de exemplo
+DELETE {{dapper_crud_HostAddress}}/api/produtos/1
+Accept: application/json
